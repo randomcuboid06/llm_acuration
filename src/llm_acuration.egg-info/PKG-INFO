@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: llm_acuration
-Version: 0.0.2
+Version: 0.0.3
 Summary: An LLM package made by Acuration
 Author-email: LLM Acuration team <cuboidrandom@gmail.com>
 Classifier: Programming Language :: Python :: 3
@@ -22,3 +22,5 @@ from llm_acuration.hello import hello
 hello()
 ```
 Prints "Hello, Acuration World!"
+
+You can use help() on functions to know more about them
