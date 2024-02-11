@@ -10,3 +10,5 @@ from llm_acuration.hello import hello
 hello()
 ```
 Prints "Hello, Acuration World!"
+
+You can use help() on functions to know more about them
