@@ -12,3 +12,6 @@ hello()
 Prints "Hello, Acuration World!"
 
 You can use help() on functions to know more about them
+
+0.0.4
+- added requirements.txt file
