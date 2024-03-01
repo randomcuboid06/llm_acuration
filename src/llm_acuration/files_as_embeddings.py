@@ -14,13 +14,14 @@ Original file is located at
 import chromadb
 import csv
 
-import chromadb
-import csv
-
-def store_Function():
+def store_Function(text_files, csv_files):
     """
     This function demonstrates how to interact with ChromaDB by creating a collection,
     uploading text and CSV files as embeddings, and querying the collection.
+
+    Args:
+    text_files (list): List of text file paths.
+    csv_files (list): List of CSV file paths.
     """
     # Step 1: Get the Chroma Client
     chroma_client = chromadb.Client()
@@ -29,8 +30,6 @@ def store_Function():
     collection = chroma_client.create_collection(name="my_collections")
 
     # Step 3: Upload text files as embeddings
-    text_files = ["file1.txt", "file2.txt"]  # List of text file paths
-
     for file_path in text_files:
         with open(file_path, 'r') as file:
             text_content = file.read()
@@ -43,8 +42,6 @@ def store_Function():
         )
 
     # Step 4: Upload CSV files as embeddings
-    csv_files = ["data1.csv", "data2.csv"]  # List of CSV file paths
-
     for file_path in csv_files:
         with open(file_path, 'r') as file:
             csv_reader = csv.reader(file)
@@ -66,20 +63,12 @@ def store_Function():
         n_results=2
     )
 
-    # Note: Replace 'file1.txt', 'file2.txt', 'data1.csv', and 'data2.csv' with the actual paths to your text and CSV files.
+    # Print query results
     for result in results:
         print("Document:", result)
-    print(results)
 
-    for result in results:
-        print("Document:", result)
-    print(results)
-
-
-    results = collection.query(
-    query_texts=["This is a query document"],
-    n_results=2
-)
-
+# Example usage:
 if __name__ == "__main__":
-    store_Function()
+    text_files = ["file1.txt", "file2.txt"]
+    csv_files = ["data1.csv", "data2.csv"]
+    store_Function(text_files, csv_files)
